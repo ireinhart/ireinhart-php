@@ -1,4 +1,4 @@
-class php::config::apache {
+class php::config::apache($document_root = '/vagrant/', $server_name = 'local.dev' ) {
 
   include 'apache2'
 
