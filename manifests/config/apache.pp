@@ -11,10 +11,11 @@ class php::config::apache {
 
   # Setups the virtual host
   file { '/etc/apache2/sites-available/php-site.conf':
-    source  => 'puppet:///modules/php/site.conf',
+    content => template('php/site.conf.erb'),
     notify  => Service['apache2'],
     require => Class['apache2'],
   }
+
   apache2::site{ 'php-site.conf':
     ensure  => 'present',
     require => File['/etc/apache2/sites-available/php-site.conf']

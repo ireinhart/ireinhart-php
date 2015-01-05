@@ -1,6 +1,6 @@
 <VirtualHost *:80>
-  DocumentRoot /vagrant/public
-  ServerName lak.dev
+  DocumentRoot <%= @document_root %>
+  ServerName <%= @server_name %>
   ServerAlias localhost
   DirectoryIndex index.php
 

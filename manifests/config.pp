@@ -21,7 +21,12 @@ class php::config inherits php {
         sqlfile => $php::mysql_sqlfile,
   }
 
-  include php::config::apache
+  class { 'php::config::apache':
+    document_root => $php::document_root,
+    server_name => $php::server_name,
+  }
+
   include php::config::xdebug
   include php::config::timezone
+
 }
